@@ -63,6 +63,7 @@ struct QuizView: View {
                         .disabled(!viewModel.hasSelectedAnswer)
                     }
                 }.padding()
+                .navigationBarHidden(true)
             }
         }
     }
