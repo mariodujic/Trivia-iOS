@@ -8,20 +8,20 @@ class QuizViewModel: ObservableObject {
     @Published private(set) var selectedAnswers: [String?] = []
     
     var cancellable: AnyCancellable? = nil
-    let triviaApi: QuizAPI
-    let triviaUiMapper: QuizQuestionsUiMapper
+    let quizApi: QuizApi
+    let quizQuestionsUiMapper: QuizQuestionsUiMapper
     
-    init(triviaApi: QuizAPI, triviaUiMapper: QuizQuestionsUiMapper) {
-        self.triviaApi = triviaApi
-        self.triviaUiMapper = triviaUiMapper
+    init(triviaApi: QuizApi, triviaUiMapper: QuizQuestionsUiMapper) {
+        self.quizApi = triviaApi
+        self.quizQuestionsUiMapper = triviaUiMapper
     }
     
     func generateQuiz(callback: @escaping (Bool)->Void) {
-        self.cancellable = self.triviaApi.get(amount: 10)
+        self.cancellable = self.quizApi.get(amount: 10)
             .sink( receiveCompletion: { [weak self] completion in
                 self?.cancellable?.cancel()
             }, receiveValue: { value in
-                self.triviaQuestions = self.triviaUiMapper.map(questions: value.results)
+                self.triviaQuestions = self.quizQuestionsUiMapper.map(questions: value.results)
                 callback(self.triviaQuestions != nil && self.triviaQuestions!.count > 0)
             })
     }
@@ -51,7 +51,11 @@ class QuizViewModel: ObservableObject {
     }
     
     var hasMoreQuestions: Bool {
-        currentQuestionIndex+1 != triviaQuestions?.count
+        if triviaQuestions != nil {
+            return currentQuestionIndex+1 < triviaQuestions!.count
+        } else {
+            return false
+        }
     }
     
     func setSelectedAnswer(selectedAnswer: String) {

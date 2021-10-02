@@ -1,19 +1,6 @@
-import Combine
 import Foundation
+import Combine
 
-struct QuizAPI {
-    
-    let client: HttpClient
-    
-    func get(amount: Int) -> AnyPublisher<QuizResponse, Error> {
-        var urlComponents = URLComponents()
-        urlComponents.scheme = "https"
-        urlComponents.host = "opentdb.com"
-        urlComponents.path = "/api.php"
-        urlComponents.queryItems = [URLQueryItem(name: "amount", value: String(amount))]
-        
-        return client.perform(URLRequest(url: urlComponents.url!))
-            .map(\.value)
-            .eraseToAnyPublisher()
-    }
+protocol QuizApi {
+    func get(amount: Int) -> AnyPublisher<QuizResponse, Error>
 }
