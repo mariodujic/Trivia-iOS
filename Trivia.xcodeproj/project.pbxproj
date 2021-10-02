@@ -23,10 +23,10 @@
 		3C83A9BD26FCE63F00A7CDAB /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 3C83A9BC26FCE63F00A7CDAB /* Swinject */; };
 		3C83A9C026FCE6A700A7CDAB /* QuizContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C83A9BF26FCE6A700A7CDAB /* QuizContainer.swift */; };
 		3CA4DE0027076886008CE27C /* LobbyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA4DDFF27076886008CE27C /* LobbyView.swift */; };
-		3CA4DE0427076C1A008CE27C /* lottie-quiz-logo.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CA4DE0327076C1A008CE27C /* lottie-quiz-logo.json */; };
 		3CF5A64D26FF00BA003812FF /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF5A64C26FF00BA003812FF /* State.swift */; };
 		3CF5A65026FF07EE003812FF /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 3CF5A64F26FF07EE003812FF /* Lottie */; };
 		3CF5A65226FF08D4003812FF /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF5A65126FF08D4003812FF /* LottieView.swift */; };
+		3CFC590A27081FC800432D4E /* lottie-quiz-logo.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CFC590927081FC800432D4E /* lottie-quiz-logo.json */; };
 		3CFC80D72700324F00141AF8 /* QuizQuestionsUiMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFC80D62700324F00141AF8 /* QuizQuestionsUiMapper.swift */; };
 		3CFC80DC270039E600141AF8 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFC80DB270039E600141AF8 /* StringUtils.swift */; };
 		3CFC80DE27003A0F00141AF8 /* DataUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFC80DD27003A0F00141AF8 /* DataUtils.swift */; };
@@ -71,9 +71,9 @@
 		3C83A9B926FCE55300A7CDAB /* QuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewModel.swift; sourceTree = "<group>"; };
 		3C83A9BF26FCE6A700A7CDAB /* QuizContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizContainer.swift; sourceTree = "<group>"; };
 		3CA4DDFF27076886008CE27C /* LobbyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyView.swift; sourceTree = "<group>"; };
-		3CA4DE0327076C1A008CE27C /* lottie-quiz-logo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "lottie-quiz-logo.json"; path = "../../../../Downloads/lottie-quiz-logo.json"; sourceTree = "<group>"; };
 		3CF5A64C26FF00BA003812FF /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		3CF5A65126FF08D4003812FF /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		3CFC590927081FC800432D4E /* lottie-quiz-logo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lottie-quiz-logo.json"; sourceTree = "<group>"; };
 		3CFC80D62700324F00141AF8 /* QuizQuestionsUiMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizQuestionsUiMapper.swift; sourceTree = "<group>"; };
 		3CFC80DB270039E600141AF8 /* StringUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
 		3CFC80DD27003A0F00141AF8 /* DataUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataUtils.swift; sourceTree = "<group>"; };
@@ -222,7 +222,7 @@
 		3CF5A2F427004CBF001A19FF /* Lottie */ = {
 			isa = PBXGroup;
 			children = (
-				3CA4DE0327076C1A008CE27C /* lottie-quiz-logo.json */,
+				3CFC590927081FC800432D4E /* lottie-quiz-logo.json */,
 				3CF5A65126FF08D4003812FF /* LottieView.swift */,
 				3C20953927004F4700355774 /* lottie-background.json */,
 				3C20953827004F4700355774 /* lottie-error.json */,
@@ -394,11 +394,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3CA4DE0427076C1A008CE27C /* lottie-quiz-logo.json in Resources */,
 				3C20953C27004F4700355774 /* lottie-background.json in Resources */,
 				3C20953D27004F4700355774 /* lottie-loading.json in Resources */,
 				3C83A98C26FCE3A600A7CDAB /* Preview Assets.xcassets in Resources */,
 				3C83A98926FCE3A600A7CDAB /* Assets.xcassets in Resources */,
+				3CFC590A27081FC800432D4E /* lottie-quiz-logo.json in Resources */,
 				3C20953B27004F4700355774 /* lottie-error.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
