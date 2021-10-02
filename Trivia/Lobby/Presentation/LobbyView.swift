@@ -6,7 +6,7 @@ struct LobbyView: View {
             ZStack {
                 VStack {
                     Spacer().background(Color.red)
-                    LottieView(filename: "lottie-background")
+                    LottieView(filename: "lottie-background", loop: true)
                         .frame(height: 500)
                         .scaleEffect(1.3)
                         .offset(y: 150)
