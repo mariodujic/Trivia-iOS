@@ -4,6 +4,8 @@ import Foundation
 
 struct QuizView: View {
     
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
     @ObservedObject var viewModel: QuizViewModel = Container.quizContainer.resolve(QuizViewModel.self)!
     
     var body: some View {
@@ -22,7 +24,21 @@ struct QuizView: View {
                         .offset(y: 150)
                 }
                 VStack {
-                    Text(viewModel.currentQuestionIndicator).font(.system(size: 25))
+                    ZStack {
+                        ZStack {
+                            Text(viewModel.currentQuestionIndicator).font(.system(size: 25))
+                        }
+                        HStack {
+                            Button(action: {
+                                self.presentationMode.wrappedValue.dismiss()
+                            }) {
+                                Image(uiImage: UIImage(named: "left-arrow")!)
+                                    .resizable()
+                                    .frame(width: 40, height: 40)
+                            }
+                            Spacer()
+                        }
+                    }
                     VStack{
                         Spacer()
                         Text(viewModel.currentQuestion).font(.system(size: 22))
