@@ -3,7 +3,6 @@ import Combine
 
 class QuizViewModel: ObservableObject {
     
-    @Published private(set) var state: State = State.Loading
     @Published private(set) var triviaQuestions: [TriviaQuestion]? = nil
     @Published private(set) var currentQuestionIndex: Int = 0
     @Published private(set) var selectedAnswers: [String?] = []
@@ -15,22 +14,15 @@ class QuizViewModel: ObservableObject {
     init(triviaApi: QuizAPI, triviaUiMapper: QuizQuestionsUiMapper) {
         self.triviaApi = triviaApi
         self.triviaUiMapper = triviaUiMapper
-        getQuestions()
     }
     
-    private func getQuestions() {
+    func generateQuiz(callback: @escaping (Bool)->Void) {
         self.cancellable = self.triviaApi.get(amount: 10)
             .sink( receiveCompletion: { [weak self] completion in
-                switch completion {
-                case .finished:
-                    print("Success")
-                case .failure(_):
-                    self?.state = State.Error
-                }
                 self?.cancellable?.cancel()
             }, receiveValue: { value in
                 self.triviaQuestions = self.triviaUiMapper.map(questions: value.results)
-                self.state = State.Success
+                callback(self.triviaQuestions != nil && self.triviaQuestions!.count > 0)
             })
     }
     

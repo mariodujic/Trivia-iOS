@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3C20953B27004F4700355774 /* lottie-error.json in Resources */ = {isa = PBXBuildFile; fileRef = 3C20953827004F4700355774 /* lottie-error.json */; };
 		3C20953C27004F4700355774 /* lottie-background.json in Resources */ = {isa = PBXBuildFile; fileRef = 3C20953927004F4700355774 /* lottie-background.json */; };
-		3C20953D27004F4700355774 /* lottie-loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 3C20953A27004F4700355774 /* lottie-loading.json */; };
 		3C83A98526FCE3A400A7CDAB /* TriviaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C83A98426FCE3A400A7CDAB /* TriviaApp.swift */; };
 		3C83A98726FCE3A400A7CDAB /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C83A98626FCE3A400A7CDAB /* QuizView.swift */; };
 		3C83A98926FCE3A600A7CDAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C83A98826FCE3A600A7CDAB /* Assets.xcassets */; };
@@ -26,6 +24,10 @@
 		3CF5A64D26FF00BA003812FF /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF5A64C26FF00BA003812FF /* State.swift */; };
 		3CF5A65026FF07EE003812FF /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 3CF5A64F26FF07EE003812FF /* Lottie */; };
 		3CF5A65226FF08D4003812FF /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF5A65126FF08D4003812FF /* LottieView.swift */; };
+		3CF9CCA12708A8B100461E02 /* LobbyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF9CCA02708A8B100461E02 /* LobbyViewModel.swift */; };
+		3CF9CCA52708A8E200461E02 /* LobbyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF9CCA42708A8E200461E02 /* LobbyState.swift */; };
+		3CF9CCA82708A9A700461E02 /* LobbyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF9CCA72708A9A700461E02 /* LobbyContainer.swift */; };
+		3CF9CCAC2708B16B00461E02 /* lottie-quiz-generation.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CF9CCAB2708B16B00461E02 /* lottie-quiz-generation.json */; };
 		3CFC590A27081FC800432D4E /* lottie-quiz-logo.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CFC590927081FC800432D4E /* lottie-quiz-logo.json */; };
 		3CFC80D72700324F00141AF8 /* QuizQuestionsUiMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFC80D62700324F00141AF8 /* QuizQuestionsUiMapper.swift */; };
 		3CFC80DC270039E600141AF8 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFC80DB270039E600141AF8 /* StringUtils.swift */; };
@@ -50,9 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3C20953827004F4700355774 /* lottie-error.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lottie-error.json"; sourceTree = "<group>"; };
 		3C20953927004F4700355774 /* lottie-background.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lottie-background.json"; sourceTree = "<group>"; };
-		3C20953A27004F4700355774 /* lottie-loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lottie-loading.json"; sourceTree = "<group>"; };
 		3C83A98126FCE3A400A7CDAB /* Trivia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trivia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C83A98426FCE3A400A7CDAB /* TriviaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaApp.swift; sourceTree = "<group>"; };
 		3C83A98626FCE3A400A7CDAB /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
@@ -73,6 +73,10 @@
 		3CA4DDFF27076886008CE27C /* LobbyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyView.swift; sourceTree = "<group>"; };
 		3CF5A64C26FF00BA003812FF /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		3CF5A65126FF08D4003812FF /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		3CF9CCA02708A8B100461E02 /* LobbyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyViewModel.swift; sourceTree = "<group>"; };
+		3CF9CCA42708A8E200461E02 /* LobbyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyState.swift; sourceTree = "<group>"; };
+		3CF9CCA72708A9A700461E02 /* LobbyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyContainer.swift; sourceTree = "<group>"; };
+		3CF9CCAB2708B16B00461E02 /* lottie-quiz-generation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lottie-quiz-generation.json"; sourceTree = "<group>"; };
 		3CFC590927081FC800432D4E /* lottie-quiz-logo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lottie-quiz-logo.json"; sourceTree = "<group>"; };
 		3CFC80D62700324F00141AF8 /* QuizQuestionsUiMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizQuestionsUiMapper.swift; sourceTree = "<group>"; };
 		3CFC80DB270039E600141AF8 /* StringUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
@@ -129,10 +133,9 @@
 		3C83A98326FCE3A400A7CDAB /* Trivia */ = {
 			isa = PBXGroup;
 			children = (
-				3CA4DDFD2707686C008CE27C /* Lobby */,
-				3CF5A2F427004CBF001A19FF /* Lottie */,
+				3CF9CC9C2708A7FA00461E02 /* Screens */,
 				3C83A9B226FCE42F00A7CDAB /* Core */,
-				3CFAEAEF26FEE29D009BAEF3 /* Quiz */,
+				3CF5A2F427004CBF001A19FF /* Lottie */,
 				3CFC80DA270039BC00141AF8 /* Utils */,
 				3C83A98426FCE3A400A7CDAB /* TriviaApp.swift */,
 				3C83A98826FCE3A600A7CDAB /* Assets.xcassets */,
@@ -206,6 +209,7 @@
 		3CA4DDFD2707686C008CE27C /* Lobby */ = {
 			isa = PBXGroup;
 			children = (
+				3CF9CCA62708A99300461E02 /* DI */,
 				3CA4DDFE27076873008CE27C /* Presentation */,
 			);
 			path = Lobby;
@@ -214,7 +218,8 @@
 		3CA4DDFE27076873008CE27C /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				3CA4DDFF27076886008CE27C /* LobbyView.swift */,
+				3CF9CCA32708A8D700461E02 /* State */,
+				3CF9CCA22708A8CE00461E02 /* UI */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -222,21 +227,71 @@
 		3CF5A2F427004CBF001A19FF /* Lottie */ = {
 			isa = PBXGroup;
 			children = (
+				3CF9CCAB2708B16B00461E02 /* lottie-quiz-generation.json */,
 				3CFC590927081FC800432D4E /* lottie-quiz-logo.json */,
 				3CF5A65126FF08D4003812FF /* LottieView.swift */,
 				3C20953927004F4700355774 /* lottie-background.json */,
-				3C20953827004F4700355774 /* lottie-error.json */,
-				3C20953A27004F4700355774 /* lottie-loading.json */,
 			);
 			path = Lottie;
+			sourceTree = "<group>";
+		};
+		3CF9CC9C2708A7FA00461E02 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				3CF9CC9D2708A80B00461E02 /* Common */,
+				3CA4DDFD2707686C008CE27C /* Lobby */,
+				3CFAEAEF26FEE29D009BAEF3 /* Quiz */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		3CF9CC9D2708A80B00461E02 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				3C83A9AF26FCE3C100A7CDAB /* Network */,
+				3C83A9BE26FCE69000A7CDAB /* DI */,
+				3CF9CC9E2708A82F00461E02 /* Presentation */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		3CF9CC9E2708A82F00461E02 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				3C83A9B926FCE55300A7CDAB /* QuizViewModel.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		3CF9CCA22708A8CE00461E02 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				3CA4DDFF27076886008CE27C /* LobbyView.swift */,
+				3CF9CCA02708A8B100461E02 /* LobbyViewModel.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		3CF9CCA32708A8D700461E02 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				3CF9CCA42708A8E200461E02 /* LobbyState.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		3CF9CCA62708A99300461E02 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				3CF9CCA72708A9A700461E02 /* LobbyContainer.swift */,
+			);
+			path = DI;
 			sourceTree = "<group>";
 		};
 		3CFAEAEF26FEE29D009BAEF3 /* Quiz */ = {
 			isa = PBXGroup;
 			children = (
-				3C83A9AF26FCE3C100A7CDAB /* Network */,
 				3C83A9B726FCE48E00A7CDAB /* Presentation */,
-				3C83A9BE26FCE69000A7CDAB /* DI */,
 			);
 			path = Quiz;
 			sourceTree = "<group>";
@@ -262,7 +317,6 @@
 			isa = PBXGroup;
 			children = (
 				3C83A98626FCE3A400A7CDAB /* QuizView.swift */,
-				3C83A9B926FCE55300A7CDAB /* QuizViewModel.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -395,11 +449,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C20953C27004F4700355774 /* lottie-background.json in Resources */,
-				3C20953D27004F4700355774 /* lottie-loading.json in Resources */,
+				3CF9CCAC2708B16B00461E02 /* lottie-quiz-generation.json in Resources */,
 				3C83A98C26FCE3A600A7CDAB /* Preview Assets.xcassets in Resources */,
 				3C83A98926FCE3A600A7CDAB /* Assets.xcassets in Resources */,
 				3CFC590A27081FC800432D4E /* lottie-quiz-logo.json in Resources */,
-				3C20953B27004F4700355774 /* lottie-error.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,6 +478,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C83A98726FCE3A400A7CDAB /* QuizView.swift in Sources */,
+				3CF9CCA12708A8B100461E02 /* LobbyViewModel.swift in Sources */,
 				3CFC80DE27003A0F00141AF8 /* DataUtils.swift in Sources */,
 				3C83A9B626FCE45F00A7CDAB /* QuizAPI.swift in Sources */,
 				3CF5A65226FF08D4003812FF /* LottieView.swift in Sources */,
@@ -433,9 +487,11 @@
 				3CFC80D72700324F00141AF8 /* QuizQuestionsUiMapper.swift in Sources */,
 				3C83A98526FCE3A400A7CDAB /* TriviaApp.swift in Sources */,
 				3C83A9BA26FCE55300A7CDAB /* QuizViewModel.swift in Sources */,
+				3CF9CCA82708A9A700461E02 /* LobbyContainer.swift in Sources */,
 				3CFC80DC270039E600141AF8 /* StringUtils.swift in Sources */,
 				3CA4DE0027076886008CE27C /* LobbyView.swift in Sources */,
 				3C83A9C026FCE6A700A7CDAB /* QuizContainer.swift in Sources */,
+				3CF9CCA52708A8E200461E02 /* LobbyState.swift in Sources */,
 				3CF5A64D26FF00BA003812FF /* State.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
