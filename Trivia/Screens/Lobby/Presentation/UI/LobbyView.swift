@@ -5,7 +5,7 @@ struct LobbyView: View {
     
     @StateObject var quizViewModel: QuizViewModel = Container.quizContainer.resolve(QuizViewModel.self)!
     @ObservedObject var lobbyViewModel: LobbyViewModel = Container.lobbyContainer.resolve(LobbyViewModel.self)!
-        
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -16,18 +16,17 @@ struct LobbyView: View {
                         .scaleEffect(1.3)
                         .offset(y: 150)
                 }
-                VStack(spacing: 10) {
+                VStack(spacing: 20) {
                     LottieView(filename: "lottie-quiz-logo").frame(height: 300)
                     if lobbyViewModel.lobbyState == .GenerateQuiz {
-                        HStack {
-                            Image(systemName: "number")
-                            TextField("Numer of questions", text: $lobbyViewModel.questionNumber)
-                                .keyboardType(.numberPad)
-                        }
-                        .padding()
-                        .background(Color.gray.opacity(0.1))
-                        .cornerRadius(10)
-                        .frame(width: 210)
+                        Text("Number of quiz questions").font(.system(size: 25, weight: .bold))
+                        Picker("", selection: $lobbyViewModel.questionNumber, content: {
+                            Text("10").tag(10)
+                            Text("25").tag(25)
+                            Text("50").tag(50)
+                        })
+                        .pickerStyle(SegmentedPickerStyle())
+                        .frame(width: 250)
                         Button("Generate Quiz") {
                             lobbyViewModel.lobbyState = .RetrivingQuiz
                             quizViewModel.generateQuiz(numberOfQuestions: lobbyViewModel.questionNumber) { success in
