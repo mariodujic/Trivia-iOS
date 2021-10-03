@@ -1,3 +1,3 @@
-enum State {
+enum Result {
     case Loading, Success, Error
 }
