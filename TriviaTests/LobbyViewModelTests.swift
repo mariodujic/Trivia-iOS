@@ -10,7 +10,7 @@ class LobbyViewModelTests: XCTestCase {
     }
     
     func test_returns_corrent_initial_lobby_state() {
-        let expectedState = LobbyState.GenerateQuiz
+        let expectedState = LobbyState.generateQuiz
         let actualState = self.sut.lobbyState
         XCTAssertEqual(expectedState, actualState)
     }

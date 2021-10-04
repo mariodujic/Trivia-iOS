@@ -1,3 +1,3 @@
 enum LobbyState {
-    case GenerateQuiz, RetrivingQuiz, PlayQuiz
+    case generateQuiz, retrivingQuiz, playQuiz
 }

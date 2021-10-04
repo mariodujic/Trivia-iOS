@@ -2,7 +2,7 @@ import Foundation
 
 class LobbyViewModel: ObservableObject {
     
-    @Published var lobbyState: LobbyState = .GenerateQuiz
+    @Published var lobbyState: LobbyState = .generateQuiz
     @Published var questionNumber: Int = 10
     
     var validQuestionNumber: Bool  {

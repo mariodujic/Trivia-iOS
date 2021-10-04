@@ -18,7 +18,7 @@ struct LobbyView: View {
                 }
                 VStack(spacing: 20) {
                     LottieView(filename: "lottie-quiz-logo").frame(height: 300)
-                    if lobbyViewModel.lobbyState == .GenerateQuiz {
+                    if lobbyViewModel.lobbyState == .generateQuiz {
                         Text("Number of quiz questions").font(.system(size: 25, weight: .bold))
                         Picker("", selection: $lobbyViewModel.questionNumber, content: {
                             Text("10").tag(10)
@@ -28,12 +28,12 @@ struct LobbyView: View {
                         .pickerStyle(SegmentedPickerStyle())
                         .frame(width: 250)
                         Button("Generate Quiz") {
-                            lobbyViewModel.lobbyState = .RetrivingQuiz
+                            lobbyViewModel.lobbyState = .retrivingQuiz
                             quizViewModel.generateQuiz(numberOfQuestions: lobbyViewModel.questionNumber) { success in
                                 if(success) {
-                                    lobbyViewModel.lobbyState = .PlayQuiz
+                                    lobbyViewModel.lobbyState = .playQuiz
                                 } else {
-                                    lobbyViewModel.lobbyState = .GenerateQuiz
+                                    lobbyViewModel.lobbyState = .generateQuiz
                                 }
                             }
                         }
@@ -44,9 +44,9 @@ struct LobbyView: View {
                         .background(Color.black)
                         .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
                         .disabled(!lobbyViewModel.validQuestionNumber)
-                    } else if lobbyViewModel.lobbyState == .RetrivingQuiz {
+                    } else if lobbyViewModel.lobbyState == .retrivingQuiz {
                         LottieView(filename: "lottie-quiz-generation").frame(height: 200)
-                    }else if lobbyViewModel.lobbyState == .PlayQuiz {
+                    }else if lobbyViewModel.lobbyState == .playQuiz {
                         NavigationLink("Play Quiz", destination: QuizView().environmentObject(quizViewModel))
                             .padding(10)
                             .font(.system(size: 25))

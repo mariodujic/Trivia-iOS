@@ -1,3 +1,3 @@
 enum Result {
-    case Loading, Success, Error
+    case loading, success, error
 }
