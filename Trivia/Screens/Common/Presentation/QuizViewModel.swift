@@ -19,6 +19,12 @@ class QuizViewModel: ObservableObject {
     func generateQuiz(numberOfQuestions: Int, callback: @escaping (Bool)->Void) {
         self.cancellable = self.quizApi.get(amount: numberOfQuestions)
             .sink( receiveCompletion: { [weak self] completion in
+                switch completion {
+                case .failure:
+                    callback(false)
+                case .finished:
+                    print("Success")
+                }
                 self?.cancellable?.cancel()
             }, receiveValue: { value in
                 self.triviaQuestions = self.quizQuestionsUiMapper.map(questions: value.results)

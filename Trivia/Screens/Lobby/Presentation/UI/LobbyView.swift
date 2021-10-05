@@ -18,7 +18,8 @@ struct LobbyView: View {
                 }
                 VStack(spacing: 20) {
                     LottieView(filename: "lottie-quiz-logo").frame(height: 300)
-                    if lobbyViewModel.lobbyState == .generateQuiz {
+                    if lobbyViewModel.lobbyState == .generateQuiz ||
+                        lobbyViewModel.lobbyState == .errorGeneratingQuiz {
                         Text("Number of quiz questions").font(.system(size: 25, weight: .bold))
                         Picker("", selection: $lobbyViewModel.questionNumber, content: {
                             Text("10").tag(10)
@@ -27,13 +28,18 @@ struct LobbyView: View {
                         })
                         .pickerStyle(SegmentedPickerStyle())
                         .frame(width: 250)
+                        if lobbyViewModel.lobbyState == .errorGeneratingQuiz {
+                            Text("Error generating quiz, check your connection\nand try again.")
+                                .multilineTextAlignment(.center)
+                                .foregroundColor(Color.red)
+                        }
                         Button("Generate Quiz") {
                             lobbyViewModel.lobbyState = .retrivingQuiz
                             quizViewModel.generateQuiz(numberOfQuestions: lobbyViewModel.questionNumber) { success in
                                 if(success) {
                                     lobbyViewModel.lobbyState = .playQuiz
                                 } else {
-                                    lobbyViewModel.lobbyState = .generateQuiz
+                                    lobbyViewModel.lobbyState = .errorGeneratingQuiz
                                 }
                             }
                         }
@@ -45,7 +51,7 @@ struct LobbyView: View {
                         .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
                         .disabled(!lobbyViewModel.validQuestionNumber)
                     } else if lobbyViewModel.lobbyState == .retrivingQuiz {
-                        LottieView(filename: "lottie-quiz-generation").frame(height: 200)
+                        LottieView(filename: "lottie-quiz-generation", loop: true).frame(height: 200)
                     }else if lobbyViewModel.lobbyState == .playQuiz {
                         NavigationLink("Play Quiz", destination: QuizView().environmentObject(quizViewModel))
                             .padding(10)
