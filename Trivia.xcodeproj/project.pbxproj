@@ -36,6 +36,7 @@
 		3CFC80D72700324F00141AF8 /* QuizQuestionsUiMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFC80D62700324F00141AF8 /* QuizQuestionsUiMapper.swift */; };
 		3CFC80DC270039E600141AF8 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFC80DB270039E600141AF8 /* StringUtils.swift */; };
 		3CFC80DE27003A0F00141AF8 /* DataUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFC80DD27003A0F00141AF8 /* DataUtils.swift */; };
+		3CFE76CF270F444300A4EB95 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFE76CE270F444300A4EB95 /* ResultView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		3CFC80D62700324F00141AF8 /* QuizQuestionsUiMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizQuestionsUiMapper.swift; sourceTree = "<group>"; };
 		3CFC80DB270039E600141AF8 /* StringUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
 		3CFC80DD27003A0F00141AF8 /* DataUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataUtils.swift; sourceTree = "<group>"; };
+		3CFE76CE270F444300A4EB95 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C5BC258270F6810007747BB /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				3CFE76CE270F444300A4EB95 /* ResultView.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
 		3C83A97826FCE3A400A7CDAB = {
 			isa = PBXGroup;
 			children = (
@@ -252,6 +262,7 @@
 				3CF9CC9D2708A80B00461E02 /* Common */,
 				3CA4DDFD2707686C008CE27C /* Lobby */,
 				3CFAEAEF26FEE29D009BAEF3 /* Quiz */,
+				3CFE76CD270F442D00A4EB95 /* Results */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -363,6 +374,14 @@
 				3CFA1EBE2708DCFA003560A9 /* QuizAPI.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		3CFE76CD270F442D00A4EB95 /* Results */ = {
+			isa = PBXGroup;
+			children = (
+				3C5BC258270F6810007747BB /* Presentation */,
+			);
+			path = Results;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -506,6 +525,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C83A98726FCE3A400A7CDAB /* QuizView.swift in Sources */,
+				3CFE76CF270F444300A4EB95 /* ResultView.swift in Sources */,
 				3CF9CCA12708A8B100461E02 /* LobbyViewModel.swift in Sources */,
 				3CFC80DE27003A0F00141AF8 /* DataUtils.swift in Sources */,
 				3C83A9B626FCE45F00A7CDAB /* QuizApiImpl.swift in Sources */,

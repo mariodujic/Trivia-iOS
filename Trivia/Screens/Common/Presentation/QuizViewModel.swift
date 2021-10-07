@@ -38,7 +38,7 @@ class QuizViewModel: ObservableObject {
     
     var answers: [String] {
         var incorrectAnswers: [String]? =
-            triviaQuestions?[currentQuestionIndex].incorrectAnswers
+        triviaQuestions?[currentQuestionIndex].incorrectAnswers
         
         if self.correctAnswer != nil && incorrectAnswers != nil {
             incorrectAnswers?.append(self.correctAnswer!)
@@ -85,5 +85,15 @@ class QuizViewModel: ObservableObject {
     
     func onNextQuestion() {
         self.currentQuestionIndex += 1
+    }
+    
+    func getResults() -> String {
+        var correctAnswerCount = 0
+        for (index, answer) in selectedAnswers.enumerated() {
+            if answer == self.triviaQuestions![index].correctAnswer {
+                correctAnswerCount += 1
+            }
+        }
+        return "\(correctAnswerCount)/\(triviaQuestions!.count)"
     }
 }
