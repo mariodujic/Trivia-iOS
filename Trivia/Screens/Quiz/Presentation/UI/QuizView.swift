@@ -70,6 +70,13 @@ struct QuizView: View {
                         .cornerRadius(40)
                     }
                     .disabled(!quizViewModel.hasSelectedAnswer)
+                } else {
+                    NavigationLink("Finish Quiz", destination: ResultView().environmentObject(quizViewModel))
+                        .padding(.init(top: 12, leading: 15, bottom: 12, trailing: 15))
+                        .foregroundColor(.white)
+                        .background(Color.green)
+                        .cornerRadius(40)
+                        .disabled(!quizViewModel.hasSelectedAnswer)
                 }
             }.padding()
             .navigationBarHidden(true)
