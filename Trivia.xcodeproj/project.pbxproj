@@ -18,6 +18,7 @@
 		3C83A9B626FCE45F00A7CDAB /* LobbyApiImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C83A9B526FCE45F00A7CDAB /* LobbyApiImpl.swift */; };
 		3C83A9BD26FCE63F00A7CDAB /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 3C83A9BC26FCE63F00A7CDAB /* Swinject */; };
 		3CA4DE0027076886008CE27C /* LobbyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA4DDFF27076886008CE27C /* LobbyView.swift */; };
+		3CF27A572710BE8500105080 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF27A562710BE8500105080 /* Colors.swift */; };
 		3CF5A64D26FF00BA003812FF /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF5A64C26FF00BA003812FF /* Result.swift */; };
 		3CF5A65026FF07EE003812FF /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 3CF5A64F26FF07EE003812FF /* Lottie */; };
 		3CF5A65226FF08D4003812FF /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF5A65126FF08D4003812FF /* LottieView.swift */; };
@@ -73,6 +74,7 @@
 		3C83A9B326FCE43D00A7CDAB /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		3C83A9B526FCE45F00A7CDAB /* LobbyApiImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyApiImpl.swift; sourceTree = "<group>"; };
 		3CA4DDFF27076886008CE27C /* LobbyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyView.swift; sourceTree = "<group>"; };
+		3CF27A562710BE8500105080 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		3CF5A64C26FF00BA003812FF /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		3CF5A65126FF08D4003812FF /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		3CF9CCA02708A8B100461E02 /* LobbyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyViewModel.swift; sourceTree = "<group>"; };
@@ -322,6 +324,7 @@
 			children = (
 				3CFC80DB270039E600141AF8 /* StringUtils.swift */,
 				3CFC80DD27003A0F00141AF8 /* DataUtils.swift */,
+				3CF27A562710BE8500105080 /* Colors.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -520,6 +523,7 @@
 				3CFAA6982710205700295EE4 /* QuizGameContainer.swift in Sources */,
 				3CFC80D72700324F00141AF8 /* QuizQuestionsUiMapper.swift in Sources */,
 				3C83A98526FCE3A400A7CDAB /* TriviaApp.swift in Sources */,
+				3CF27A572710BE8500105080 /* Colors.swift in Sources */,
 				3CF9CCA82708A9A700461E02 /* LobbyContainer.swift in Sources */,
 				3CFA1EBF2708DCFA003560A9 /* LobbyApi.swift in Sources */,
 				3CFC80DC270039E600141AF8 /* StringUtils.swift in Sources */,

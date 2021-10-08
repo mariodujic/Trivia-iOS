@@ -4,12 +4,13 @@ import Swinject
 struct LobbyView: View {
     
     @ObservedObject private var lobbyViewModel: LobbyViewModel = Container.lobbyContainer.resolve(LobbyViewModel.self)!
+    @State private var colorScheme: ColorScheme? = nil
     
     var body: some View {
         NavigationView {
             ZStack {
                 VStack {
-                    Spacer().background(Color.red)
+                    Spacer()
                     LottieView(filename: "lottie-background", loop: true)
                         .frame(height: 500)
                         .scaleEffect(1.3)
@@ -60,7 +61,26 @@ struct LobbyView: View {
                             .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
                     }
                 }
-            }.navigationBarHidden(true)
+                HStack(alignment: .top) {
+                    Spacer()
+                    Button(action: {
+                        colorScheme = colorScheme != .dark ? .dark : .light
+                    }) {
+                        Image(uiImage: UIImage(named: colorScheme != .dark ? "turned-off" : "turned-on")!)
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                    }
+                }
+                .frame(
+                    maxWidth: .infinity,
+                    maxHeight: .infinity,
+                    alignment: .top
+                )
+                .padding(8)
+            }
+            .background(colorScheme != .dark ? Color.white : darkColor)
+            .preferredColorScheme(colorScheme)
+            .navigationBarHidden(true)
         }.accentColor( .black)
     }
 }

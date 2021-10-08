@@ -4,19 +4,21 @@ import Foundation
 
 struct QuizView: View {
     
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     private var triviaQuestions: [TriviaQuestion]
     @StateObject private var quizViewModel: QuizViewModel
+    
+    @Environment(\.colorScheme) private var colorScheme: ColorScheme
+    @Environment(\.presentationMode) private var presentationMode: Binding<PresentationMode>
     
     init(triviaQuestions: [TriviaQuestion]) {
         self.triviaQuestions = triviaQuestions
         _quizViewModel = StateObject(wrappedValue: Container.quizContainer(questions: triviaQuestions).resolve(QuizViewModel.self)!)
     }
-
+    
     var body: some View {
         ZStack(alignment: .bottom) {
             VStack {
-                Spacer().background(Color.red)
+                Spacer()
                 LottieView(filename: "lottie-background", loop: true)
                     .frame(height: 500)
                     .scaleEffect(1.3)
@@ -31,9 +33,10 @@ struct QuizView: View {
                         Button(action: {
                             self.presentationMode.wrappedValue.dismiss()
                         }) {
-                            Image(uiImage: UIImage(named: "left-arrow")!)
+                            Image(systemName: "chevron.left.circle")
                                 .resizable()
-                                .frame(width: 40, height: 40)
+                                .frame(width: 30, height: 30)
+                                .foregroundColor(.primary)
                         }
                         Spacer()
                     }
@@ -50,13 +53,12 @@ struct QuizView: View {
                                     .font(.system(size: 22))
                                 Text(answer)
                                     .font(.system(size: 19))
-                            }
+                            }.foregroundColor(.primary)
                         }
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.top)
                     }
                     .padding(.leading)
-                    .foregroundColor(Color.black)
                     Spacer()
                 }
                 if quizViewModel.hasMoreQuestions {
@@ -87,8 +89,11 @@ struct QuizView: View {
                         .cornerRadius(40)
                         .disabled(!quizViewModel.hasSelectedAnswer)
                 }
-            }.padding()
-                .navigationBarHidden(true)
+            }
+            .padding()
+            .navigationBarHidden(true)
         }
+        .background(colorScheme != .dark ? Color.white : darkColor)
+        
     }
 }
