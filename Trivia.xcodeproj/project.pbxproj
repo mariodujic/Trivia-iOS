@@ -15,10 +15,8 @@
 		3C83A9A226FCE3A600A7CDAB /* TriviaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C83A9A126FCE3A600A7CDAB /* TriviaUITests.swift */; };
 		3C83A9B126FCE3E600A7CDAB /* QuizResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C83A9B026FCE3E600A7CDAB /* QuizResponse.swift */; };
 		3C83A9B426FCE43D00A7CDAB /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C83A9B326FCE43D00A7CDAB /* HttpClient.swift */; };
-		3C83A9B626FCE45F00A7CDAB /* QuizApiImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C83A9B526FCE45F00A7CDAB /* QuizApiImpl.swift */; };
-		3C83A9BA26FCE55300A7CDAB /* QuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C83A9B926FCE55300A7CDAB /* QuizViewModel.swift */; };
+		3C83A9B626FCE45F00A7CDAB /* LobbyApiImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C83A9B526FCE45F00A7CDAB /* LobbyApiImpl.swift */; };
 		3C83A9BD26FCE63F00A7CDAB /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 3C83A9BC26FCE63F00A7CDAB /* Swinject */; };
-		3C83A9C026FCE6A700A7CDAB /* QuizContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C83A9BF26FCE6A700A7CDAB /* QuizContainer.swift */; };
 		3CA4DE0027076886008CE27C /* LobbyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA4DDFF27076886008CE27C /* LobbyView.swift */; };
 		3CF5A64D26FF00BA003812FF /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF5A64C26FF00BA003812FF /* Result.swift */; };
 		3CF5A65026FF07EE003812FF /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 3CF5A64F26FF07EE003812FF /* Lottie */; };
@@ -29,9 +27,11 @@
 		3CF9CCAC2708B16B00461E02 /* lottie-quiz-generation.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CF9CCAB2708B16B00461E02 /* lottie-quiz-generation.json */; };
 		3CFA1EBB2708D449003560A9 /* LobbyViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFA1EBA2708D449003560A9 /* LobbyViewModelTests.swift */; };
 		3CFA1EBD2708D986003560A9 /* QuizViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFA1EBC2708D986003560A9 /* QuizViewModelTests.swift */; };
-		3CFA1EBF2708DCFA003560A9 /* QuizAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFA1EBE2708DCFA003560A9 /* QuizAPI.swift */; };
-		3CFA1EC22708DDFC003560A9 /* StubQuizApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFA1EC12708DDFC003560A9 /* StubQuizApi.swift */; };
+		3CFA1EBF2708DCFA003560A9 /* LobbyApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFA1EBE2708DCFA003560A9 /* LobbyApi.swift */; };
+		3CFA1EC22708DDFC003560A9 /* StubLobbyApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFA1EC12708DDFC003560A9 /* StubLobbyApi.swift */; };
 		3CFA1EC52708E0FD003560A9 /* Fakes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFA1EC42708E0FD003560A9 /* Fakes.swift */; };
+		3CFAA6982710205700295EE4 /* QuizGameContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFAA6972710205700295EE4 /* QuizGameContainer.swift */; };
+		3CFAA69A2710217200295EE4 /* QuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFAA6992710217200295EE4 /* QuizViewModel.swift */; };
 		3CFC590A27081FC800432D4E /* lottie-quiz-logo.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CFC590927081FC800432D4E /* lottie-quiz-logo.json */; };
 		3CFC80D72700324F00141AF8 /* QuizQuestionsUiMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFC80D62700324F00141AF8 /* QuizQuestionsUiMapper.swift */; };
 		3CFC80DC270039E600141AF8 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFC80DB270039E600141AF8 /* StringUtils.swift */; };
@@ -71,9 +71,7 @@
 		3C83A9A326FCE3A600A7CDAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C83A9B026FCE3E600A7CDAB /* QuizResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizResponse.swift; sourceTree = "<group>"; };
 		3C83A9B326FCE43D00A7CDAB /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
-		3C83A9B526FCE45F00A7CDAB /* QuizApiImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizApiImpl.swift; sourceTree = "<group>"; };
-		3C83A9B926FCE55300A7CDAB /* QuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewModel.swift; sourceTree = "<group>"; };
-		3C83A9BF26FCE6A700A7CDAB /* QuizContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizContainer.swift; sourceTree = "<group>"; };
+		3C83A9B526FCE45F00A7CDAB /* LobbyApiImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyApiImpl.swift; sourceTree = "<group>"; };
 		3CA4DDFF27076886008CE27C /* LobbyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyView.swift; sourceTree = "<group>"; };
 		3CF5A64C26FF00BA003812FF /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		3CF5A65126FF08D4003812FF /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
@@ -83,9 +81,11 @@
 		3CF9CCAB2708B16B00461E02 /* lottie-quiz-generation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lottie-quiz-generation.json"; sourceTree = "<group>"; };
 		3CFA1EBA2708D449003560A9 /* LobbyViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyViewModelTests.swift; sourceTree = "<group>"; };
 		3CFA1EBC2708D986003560A9 /* QuizViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewModelTests.swift; sourceTree = "<group>"; };
-		3CFA1EBE2708DCFA003560A9 /* QuizAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizAPI.swift; sourceTree = "<group>"; };
-		3CFA1EC12708DDFC003560A9 /* StubQuizApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubQuizApi.swift; sourceTree = "<group>"; };
+		3CFA1EBE2708DCFA003560A9 /* LobbyApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyApi.swift; sourceTree = "<group>"; };
+		3CFA1EC12708DDFC003560A9 /* StubLobbyApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubLobbyApi.swift; sourceTree = "<group>"; };
 		3CFA1EC42708E0FD003560A9 /* Fakes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fakes.swift; sourceTree = "<group>"; };
+		3CFAA6972710205700295EE4 /* QuizGameContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizGameContainer.swift; sourceTree = "<group>"; };
+		3CFAA6992710217200295EE4 /* QuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewModel.swift; sourceTree = "<group>"; };
 		3CFC590927081FC800432D4E /* lottie-quiz-logo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lottie-quiz-logo.json"; sourceTree = "<group>"; };
 		3CFC80D62700324F00141AF8 /* QuizQuestionsUiMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizQuestionsUiMapper.swift; sourceTree = "<group>"; };
 		3CFC80DB270039E600141AF8 /* StringUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
@@ -192,15 +192,6 @@
 			path = TriviaUITests;
 			sourceTree = "<group>";
 		};
-		3C83A9AF26FCE3C100A7CDAB /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				3CFC80E227003AB000141AF8 /* API */,
-				3CFC80E127003AA600141AF8 /* Model */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
 		3C83A9B226FCE42F00A7CDAB /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -219,17 +210,10 @@
 			path = Presentation;
 			sourceTree = "<group>";
 		};
-		3C83A9BE26FCE69000A7CDAB /* DI */ = {
-			isa = PBXGroup;
-			children = (
-				3C83A9BF26FCE6A700A7CDAB /* QuizContainer.swift */,
-			);
-			path = DI;
-			sourceTree = "<group>";
-		};
 		3CA4DDFD2707686C008CE27C /* Lobby */ = {
 			isa = PBXGroup;
 			children = (
+				3CFAA69B2710283900295EE4 /* Network */,
 				3CF9CCA62708A99300461E02 /* DI */,
 				3CA4DDFE27076873008CE27C /* Presentation */,
 			);
@@ -259,30 +243,11 @@
 		3CF9CC9C2708A7FA00461E02 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				3CF9CC9D2708A80B00461E02 /* Common */,
 				3CA4DDFD2707686C008CE27C /* Lobby */,
 				3CFAEAEF26FEE29D009BAEF3 /* Quiz */,
 				3CFE76CD270F442D00A4EB95 /* Results */,
 			);
 			path = Screens;
-			sourceTree = "<group>";
-		};
-		3CF9CC9D2708A80B00461E02 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				3C83A9AF26FCE3C100A7CDAB /* Network */,
-				3C83A9BE26FCE69000A7CDAB /* DI */,
-				3CF9CC9E2708A82F00461E02 /* Presentation */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
-		3CF9CC9E2708A82F00461E02 /* Presentation */ = {
-			isa = PBXGroup;
-			children = (
-				3C83A9B926FCE55300A7CDAB /* QuizViewModel.swift */,
-			);
-			path = Presentation;
 			sourceTree = "<group>";
 		};
 		3CF9CCA22708A8CE00461E02 /* UI */ = {
@@ -313,7 +278,7 @@
 		3CFA1EC02708DDEB003560A9 /* Stubs */ = {
 			isa = PBXGroup;
 			children = (
-				3CFA1EC12708DDFC003560A9 /* StubQuizApi.swift */,
+				3CFA1EC12708DDFC003560A9 /* StubLobbyApi.swift */,
 			);
 			path = Stubs;
 			sourceTree = "<group>";
@@ -326,9 +291,27 @@
 			path = Fakes;
 			sourceTree = "<group>";
 		};
+		3CFAA6962710204200295EE4 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				3CFAA6972710205700295EE4 /* QuizGameContainer.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		3CFAA69B2710283900295EE4 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				3CFC80E127003AA600141AF8 /* Model */,
+				3CFC80E227003AB000141AF8 /* API */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		3CFAEAEF26FEE29D009BAEF3 /* Quiz */ = {
 			isa = PBXGroup;
 			children = (
+				3CFAA6962710204200295EE4 /* DI */,
 				3C83A9B726FCE48E00A7CDAB /* Presentation */,
 			);
 			path = Quiz;
@@ -355,6 +338,7 @@
 			isa = PBXGroup;
 			children = (
 				3C83A98626FCE3A400A7CDAB /* QuizView.swift */,
+				3CFAA6992710217200295EE4 /* QuizViewModel.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -370,8 +354,8 @@
 		3CFC80E227003AB000141AF8 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				3C83A9B526FCE45F00A7CDAB /* QuizApiImpl.swift */,
-				3CFA1EBE2708DCFA003560A9 /* QuizAPI.swift */,
+				3C83A9B526FCE45F00A7CDAB /* LobbyApiImpl.swift */,
+				3CFA1EBE2708DCFA003560A9 /* LobbyApi.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -528,18 +512,18 @@
 				3CFE76CF270F444300A4EB95 /* ResultView.swift in Sources */,
 				3CF9CCA12708A8B100461E02 /* LobbyViewModel.swift in Sources */,
 				3CFC80DE27003A0F00141AF8 /* DataUtils.swift in Sources */,
-				3C83A9B626FCE45F00A7CDAB /* QuizApiImpl.swift in Sources */,
+				3C83A9B626FCE45F00A7CDAB /* LobbyApiImpl.swift in Sources */,
+				3CFAA69A2710217200295EE4 /* QuizViewModel.swift in Sources */,
 				3CF5A65226FF08D4003812FF /* LottieView.swift in Sources */,
 				3C83A9B126FCE3E600A7CDAB /* QuizResponse.swift in Sources */,
 				3C83A9B426FCE43D00A7CDAB /* HttpClient.swift in Sources */,
+				3CFAA6982710205700295EE4 /* QuizGameContainer.swift in Sources */,
 				3CFC80D72700324F00141AF8 /* QuizQuestionsUiMapper.swift in Sources */,
 				3C83A98526FCE3A400A7CDAB /* TriviaApp.swift in Sources */,
-				3C83A9BA26FCE55300A7CDAB /* QuizViewModel.swift in Sources */,
 				3CF9CCA82708A9A700461E02 /* LobbyContainer.swift in Sources */,
-				3CFA1EBF2708DCFA003560A9 /* QuizAPI.swift in Sources */,
+				3CFA1EBF2708DCFA003560A9 /* LobbyApi.swift in Sources */,
 				3CFC80DC270039E600141AF8 /* StringUtils.swift in Sources */,
 				3CA4DE0027076886008CE27C /* LobbyView.swift in Sources */,
-				3C83A9C026FCE6A700A7CDAB /* QuizContainer.swift in Sources */,
 				3CF9CCA52708A8E200461E02 /* LobbyState.swift in Sources */,
 				3CF5A64D26FF00BA003812FF /* Result.swift in Sources */,
 			);
@@ -552,7 +536,7 @@
 				3CFA1EC52708E0FD003560A9 /* Fakes.swift in Sources */,
 				3CFA1EBB2708D449003560A9 /* LobbyViewModelTests.swift in Sources */,
 				3CFA1EBD2708D986003560A9 /* QuizViewModelTests.swift in Sources */,
-				3CFA1EC22708DDFC003560A9 /* StubQuizApi.swift in Sources */,
+				3CFA1EC22708DDFC003560A9 /* StubLobbyApi.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -5,8 +5,14 @@ import Foundation
 struct QuizView: View {
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    @EnvironmentObject var quizViewModel: QuizViewModel
+    private var triviaQuestions: [TriviaQuestion]
+    @StateObject private var quizViewModel: QuizViewModel
     
+    init(triviaQuestions: [TriviaQuestion]) {
+        self.triviaQuestions = triviaQuestions
+        _quizViewModel = StateObject(wrappedValue: Container.quizContainer(questions: triviaQuestions).resolve(QuizViewModel.self)!)
+    }
+
     var body: some View {
         ZStack(alignment: .bottom) {
             VStack {
@@ -83,12 +89,6 @@ struct QuizView: View {
                 }
             }.padding()
                 .navigationBarHidden(true)
-        }
-    }
-    
-    struct ContentView_Previews: PreviewProvider {
-        static var previews: some View {
-            QuizView()
         }
     }
 }

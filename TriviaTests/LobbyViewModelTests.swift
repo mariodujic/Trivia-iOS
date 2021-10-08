@@ -3,10 +3,11 @@ import XCTest
 
 class LobbyViewModelTests: XCTestCase {
     
+    let lobbyApi: LobbyApi = StubLobbyApi()
     var sut: LobbyViewModel!
     
     override func setUp() {
-        self.sut = LobbyViewModel()
+        self.sut = LobbyViewModel(triviaApi: lobbyApi)
     }
     
     func test_returns_corrent_initial_lobby_state() {

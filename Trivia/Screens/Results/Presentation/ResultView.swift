@@ -8,7 +8,7 @@ struct ResultView: View {
     init(quizResult: String){
         self.quizResult = quizResult
     }
-
+    
     var body: some View {
         VStack(spacing: 15){
             Text("Correct answers:")

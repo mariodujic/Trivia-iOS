@@ -1,7 +1,7 @@
 import Combine
 import Foundation
 
-struct QuizApiImpl: QuizApi {
+struct LobbyApiImpl: LobbyApi {
     
     let client: HttpClient
     

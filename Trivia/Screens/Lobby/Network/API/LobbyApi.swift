@@ -1,6 +1,6 @@
 import Foundation
 import Combine
 
-protocol QuizApi {
+protocol LobbyApi {
     func get(amount: Int) -> AnyPublisher<QuizResponse, Error>
 }

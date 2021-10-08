@@ -3,8 +3,7 @@ import Swinject
 
 struct LobbyView: View {
     
-    @StateObject var quizViewModel: QuizViewModel = Container.quizContainer.resolve(QuizViewModel.self)!
-    @ObservedObject var lobbyViewModel: LobbyViewModel = Container.lobbyContainer.resolve(LobbyViewModel.self)!
+    @ObservedObject private var lobbyViewModel: LobbyViewModel = Container.lobbyContainer.resolve(LobbyViewModel.self)!
     
     var body: some View {
         NavigationView {
@@ -26,8 +25,8 @@ struct LobbyView: View {
                             Text("25").tag(25)
                             Text("50").tag(50)
                         })
-                        .pickerStyle(SegmentedPickerStyle())
-                        .frame(width: 250)
+                            .pickerStyle(SegmentedPickerStyle())
+                            .frame(width: 250)
                         if lobbyViewModel.lobbyState == .errorGeneratingQuiz {
                             Text("Error generating quiz, check your connection\nand try again.")
                                 .multilineTextAlignment(.center)
@@ -35,7 +34,7 @@ struct LobbyView: View {
                         }
                         Button("Generate Quiz") {
                             lobbyViewModel.lobbyState = .retrivingQuiz
-                            quizViewModel.generateQuiz(numberOfQuestions: lobbyViewModel.questionNumber) { success in
+                            lobbyViewModel.generateQuiz(numberOfQuestions: lobbyViewModel.questionNumber) { success in
                                 if(success) {
                                     lobbyViewModel.lobbyState = .playQuiz
                                 } else {
@@ -53,7 +52,7 @@ struct LobbyView: View {
                     } else if lobbyViewModel.lobbyState == .retrivingQuiz {
                         LottieView(filename: "lottie-quiz-generation", loop: true).frame(height: 200)
                     }else if lobbyViewModel.lobbyState == .playQuiz {
-                        NavigationLink("Play Quiz", destination: QuizView().environmentObject(quizViewModel))
+                        NavigationLink("Play Quiz", destination: QuizView(triviaQuestions: lobbyViewModel.triviaQuestions!))
                             .padding(10)
                             .font(.system(size: 25))
                             .foregroundColor(Color.white)
@@ -63,11 +62,5 @@ struct LobbyView: View {
                 }
             }.navigationBarHidden(true)
         }.accentColor( .black)
-    }
-    
-    struct ContentView_Previews: PreviewProvider {
-        static var previews: some View {
-            LobbyView()
-        }
     }
 }

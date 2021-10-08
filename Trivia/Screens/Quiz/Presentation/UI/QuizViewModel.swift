@@ -1,5 +1,4 @@
 import Foundation
-import Combine
 
 class QuizViewModel: ObservableObject {
     
@@ -7,29 +6,11 @@ class QuizViewModel: ObservableObject {
     @Published private(set) var currentQuestionIndex: Int = 0
     @Published private(set) var selectedAnswers: [String?] = []
     
-    var cancellable: AnyCancellable? = nil
-    let quizApi: QuizApi
     let quizQuestionsUiMapper: QuizQuestionsUiMapper
     
-    init(triviaApi: QuizApi, triviaUiMapper: QuizQuestionsUiMapper) {
-        self.quizApi = triviaApi
-        self.quizQuestionsUiMapper = triviaUiMapper
-    }
-    
-    func generateQuiz(numberOfQuestions: Int, callback: @escaping (Bool)->Void) {
-        self.cancellable = self.quizApi.get(amount: numberOfQuestions)
-            .sink( receiveCompletion: { [weak self] completion in
-                switch completion {
-                case .failure:
-                    callback(false)
-                case .finished:
-                    print("Success")
-                }
-                self?.cancellable?.cancel()
-            }, receiveValue: { value in
-                self.triviaQuestions = self.quizQuestionsUiMapper.map(questions: value.results)
-                callback(self.triviaQuestions != nil && self.triviaQuestions!.count > 0)
-            })
+    init(quizQuestionsUiMapper: QuizQuestionsUiMapper, triviaQuestions: [TriviaQuestion]) {
+        self.quizQuestionsUiMapper = quizQuestionsUiMapper
+        self.triviaQuestions = self.quizQuestionsUiMapper.map(questions: triviaQuestions)
     }
     
     var currentQuestion: String {
