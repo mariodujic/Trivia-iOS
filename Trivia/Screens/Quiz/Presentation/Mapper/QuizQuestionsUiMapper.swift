@@ -4,7 +4,6 @@ class QuizQuestionsUiMapper {
         questions.map {question in
             TriviaQuestion(
                 category: question.category,
-                type: question.type,
                 difficulty:question.difficulty,
                 question: question.question.htmlToString,
                 correctAnswer: question.correctAnswer.htmlToString,
