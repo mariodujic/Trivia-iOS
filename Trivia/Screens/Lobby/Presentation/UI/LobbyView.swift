@@ -4,6 +4,7 @@ import Swinject
 struct LobbyView: View {
     
     @ObservedObject private var lobbyViewModel: LobbyViewModel = Container.lobbyContainer.resolve(LobbyViewModel.self)!
+    @State private var colorScheme: ColorScheme? = nil
     
     var body: some View {
         NavigationView {
@@ -60,7 +61,28 @@ struct LobbyView: View {
                             .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
                     }
                 }
-            }.navigationBarHidden(true)
+                HStack(alignment: .top) {
+                    Spacer()
+                    Button(action: {
+                        colorScheme = colorScheme != .dark ? .dark : .light
+                    }) {
+                        Image(uiImage: UIImage(named: colorScheme != .dark ? "turned-off" : "turned-on")!)
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                    }
+                }
+                .frame(
+                    minWidth: 0,
+                    maxWidth: .infinity,
+                    minHeight: 0,
+                    maxHeight: .infinity,
+                    alignment: .top
+                )
+                .padding(8)
+            }
+            .background(colorScheme != .dark ? Color.white : darkColor)
+            .preferredColorScheme(colorScheme)
+            .navigationBarHidden(true)
         }.accentColor( .black)
     }
 }
