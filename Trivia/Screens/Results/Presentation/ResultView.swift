@@ -3,12 +3,16 @@ import SwiftUI
 
 struct ResultView: View {
     
-    @EnvironmentObject var quizViewModel: QuizViewModel
+    private var quizResult: String
+    
+    init(quizResult: String){
+        self.quizResult = quizResult
+    }
 
     var body: some View {
         VStack(spacing: 15){
             Text("Correct answers:")
-            Text(quizViewModel.getResults())
+            Text(self.quizResult)
                 .font(.system(size: 26, weight: .bold))
         }
     }

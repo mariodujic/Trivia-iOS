@@ -71,7 +71,10 @@ struct QuizView: View {
                     }
                     .disabled(!quizViewModel.hasSelectedAnswer)
                 } else {
-                    NavigationLink("Finish Quiz", destination: ResultView().environmentObject(quizViewModel))
+                    NavigationLink(
+                        "Finish Quiz",
+                        destination: ResultView(quizResult: quizViewModel.getResults())
+                    )
                         .padding(.init(top: 12, leading: 15, bottom: 12, trailing: 15))
                         .foregroundColor(.white)
                         .background(Color.green)
@@ -79,7 +82,7 @@ struct QuizView: View {
                         .disabled(!quizViewModel.hasSelectedAnswer)
                 }
             }.padding()
-            .navigationBarHidden(true)
+                .navigationBarHidden(true)
         }
     }
     
