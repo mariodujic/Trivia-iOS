@@ -1,5 +1,6 @@
 import XCTest
 @testable import Trivia
+import SwiftUI
 
 class LobbyViewModelTests: XCTestCase {
     
@@ -7,6 +8,7 @@ class LobbyViewModelTests: XCTestCase {
     var sut: LobbyViewModel!
     
     override func setUp() {
+        UserDefaults.standard.removeObject(forKey: darkThemeKey)
         self.sut = LobbyViewModel(triviaApi: lobbyApi)
     }
     
@@ -30,5 +32,27 @@ class LobbyViewModelTests: XCTestCase {
     func test_returns_false_as_question_number_input_is_invalid() {
         sut.questionNumber = 0
         XCTAssertFalse(sut.validQuestionNumber)
+    }
+    
+    func test_returns_initial_darkTheme_as_false() {
+        XCTAssertFalse(sut.darkTheme)
+    }
+    
+    func test_returns_darkTheme_as_true_when_toggleDarkTheme() {
+        sut.toggleDarkTheme()
+        XCTAssertTrue(sut.darkTheme)
+    }
+    
+    func test_returns_initial_colorScheme_light() {
+        let expectedValue: ColorScheme = .light
+        let actualValue = sut.colorScheme
+        XCTAssertEqual(expectedValue, actualValue)
+    }
+    
+    func test_returns_colorScheme_dark_when_toggleDarkTheme() {
+        sut.toggleDarkTheme()
+        let expectedValue: ColorScheme = .dark
+        let actualValue = sut.colorScheme
+        XCTAssertEqual(expectedValue, actualValue)
     }
 }

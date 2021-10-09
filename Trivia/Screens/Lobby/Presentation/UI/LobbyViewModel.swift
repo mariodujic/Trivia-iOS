@@ -1,5 +1,8 @@
 import Foundation
 import Combine
+import SwiftUI
+
+let darkThemeKey: String = "darkThemeKey"
 
 class LobbyViewModel: ObservableObject {
     
@@ -10,8 +13,25 @@ class LobbyViewModel: ObservableObject {
     var cancellable: AnyCancellable? = nil
     var triviaApi: LobbyApi
     
+    @Published private(set) var darkTheme: Bool = UserDefaults.standard.bool(forKey: darkThemeKey) {
+        didSet { UserDefaults.standard.set(self.darkTheme, forKey: darkThemeKey) }
+    }
+    
     init(triviaApi: LobbyApi){
         self.triviaApi = triviaApi
+        self.registerDefaultDarkTheme()
+    }
+    
+    private func registerDefaultDarkTheme() {
+        UserDefaults.standard.register(defaults: [darkThemeKey : false])
+    }
+    
+    func toggleDarkTheme() {
+        self.darkTheme = !self.darkTheme
+    }
+    
+    var colorScheme: ColorScheme {
+        self.darkTheme ? .dark : .light
     }
     
     var validQuestionNumber: Bool  {
