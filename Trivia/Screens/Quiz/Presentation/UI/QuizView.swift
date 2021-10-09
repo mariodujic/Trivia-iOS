@@ -68,7 +68,7 @@ struct QuizView: View {
                         HStack {
                             Image(systemName: "play")
                                 .font(.system(size: 25))
-                            Text("Next Question")
+                            Text(Strings.quizNextQuestion)
                                 .fontWeight(.semibold)
                                 .font(.system(size: 15))
                         }
@@ -80,7 +80,7 @@ struct QuizView: View {
                     .disabled(!quizViewModel.hasSelectedAnswer)
                 } else {
                     NavigationLink(
-                        "Finish Quiz",
+                        Strings.quizFinishQuiz,
                         destination: ResultView(quizResult: quizViewModel.getResults())
                     )
                         .padding(.init(top: 12, leading: 15, bottom: 12, trailing: 15))
@@ -93,7 +93,7 @@ struct QuizView: View {
             .padding()
             .navigationBarHidden(true)
         }
-        .background(colorScheme != .dark ? Color.white : darkColor)
+        .background(colorScheme != .dark ? Color.white : Colors.darkColor)
         
     }
 }

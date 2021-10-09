@@ -6,14 +6,14 @@ struct ResultView: View {
     private var quizResult: String
     
     @Environment(\.colorScheme) private var colorScheme: ColorScheme
-
+    
     init(quizResult: String){
         self.quizResult = quizResult
     }
     
     var body: some View {
         VStack(spacing: 15){
-            Text("Correct answers:")
+            Text(Strings.resultCorrectAnswers)
             Text(self.quizResult)
                 .font(.system(size: 26, weight: .bold))
         }
@@ -25,6 +25,6 @@ struct ResultView: View {
             alignment: .center
         )
         .navigationBarHidden(true)
-        .background(colorScheme != .dark ? Color.white : darkColor)
+        .background(colorScheme != .dark ? Color.white : Colors.darkColor)
     }
 }

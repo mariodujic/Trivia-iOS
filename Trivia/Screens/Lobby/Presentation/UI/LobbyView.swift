@@ -20,20 +20,20 @@ struct LobbyView: View {
                     LottieView(filename: "lottie-quiz-logo").frame(height: 300)
                     if lobbyViewModel.lobbyState == .generateQuiz ||
                         lobbyViewModel.lobbyState == .errorGeneratingQuiz {
-                        Text("Number of quiz questions").font(.system(size: 25, weight: .bold))
+                        Text(Strings.lobbyNumberOfQuizQuestions).font(.system(size: 25, weight: .bold))
                         Picker("", selection: $lobbyViewModel.questionNumber, content: {
-                            Text("10").tag(10)
-                            Text("25").tag(25)
-                            Text("50").tag(50)
+                            Text(Strings.lobbyQuestionNumberTen).tag(10)
+                            Text(Strings.lobbyQuestionNumberTwentyFive).tag(25)
+                            Text(Strings.lobbyQuestionNumberFifty).tag(50)
                         })
                             .pickerStyle(SegmentedPickerStyle())
                             .frame(width: 250)
                         if lobbyViewModel.lobbyState == .errorGeneratingQuiz {
-                            Text("Error generating quiz, check your connection\nand try again.")
+                            Text(Strings.lobbyErrorGeneratingQuiz)
                                 .multilineTextAlignment(.center)
                                 .foregroundColor(Color.red)
                         }
-                        Button("Generate Quiz") {
+                        Button(Strings.lobbyGenerateQuiz) {
                             lobbyViewModel.lobbyState = .retrivingQuiz
                             lobbyViewModel.generateQuiz(numberOfQuestions: lobbyViewModel.questionNumber) { success in
                                 if(success) {
@@ -53,7 +53,7 @@ struct LobbyView: View {
                     } else if lobbyViewModel.lobbyState == .retrivingQuiz {
                         LottieView(filename: "lottie-quiz-generation", loop: true).frame(height: 200)
                     }else if lobbyViewModel.lobbyState == .playQuiz {
-                        NavigationLink("Play Quiz", destination: QuizView(triviaQuestions: lobbyViewModel.triviaQuestions!))
+                        NavigationLink(Strings.lobbyPlayQuiz, destination: QuizView(triviaQuestions: lobbyViewModel.triviaQuestions!))
                             .padding(10)
                             .font(.system(size: 25))
                             .foregroundColor(Color.white)
@@ -78,7 +78,7 @@ struct LobbyView: View {
                 )
                 .padding(8)
             }
-            .background(colorScheme != .dark ? Color.white : darkColor)
+            .background(colorScheme != .dark ? Color.white : Colors.darkColor)
             .preferredColorScheme(colorScheme)
             .navigationBarHidden(true)
         }.accentColor( .black)
