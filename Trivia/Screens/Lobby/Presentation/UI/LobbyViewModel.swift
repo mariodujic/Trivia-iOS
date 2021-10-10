@@ -38,19 +38,23 @@ class LobbyViewModel: ObservableObject {
         questionNumber != 0
     }
     
-    func generateQuiz(numberOfQuestions: Int, callback: @escaping (Bool)->Void) {
+    func generateQuiz(numberOfQuestions: Int) {
         self.cancellable = self.triviaApi.get(amount: numberOfQuestions)
             .sink( receiveCompletion: { [weak self] completion in
                 switch completion {
                 case .failure:
-                    callback(false)
+                    self?.lobbyState = .errorGeneratingQuiz
                 case .finished:
                     print("Success")
                 }
                 self?.cancellable?.cancel()
             }, receiveValue: { value in
                 self.triviaQuestions = value.results
-                callback(self.triviaQuestions != nil && self.triviaQuestions!.count > 0)
+                if self.triviaQuestions != nil && self.triviaQuestions!.count != 0 {
+                    self.lobbyState = .playQuiz
+                }else {
+                    self.lobbyState = .errorGeneratingQuiz
+                }
             })
     }
 }

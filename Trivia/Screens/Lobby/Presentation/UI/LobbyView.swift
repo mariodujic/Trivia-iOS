@@ -34,13 +34,7 @@ struct LobbyView: View {
                         }
                         Button(Strings.lobbyGenerateQuiz) {
                             lobbyViewModel.lobbyState = .retrivingQuiz
-                            lobbyViewModel.generateQuiz(numberOfQuestions: lobbyViewModel.questionNumber) { success in
-                                if(success) {
-                                    lobbyViewModel.lobbyState = .playQuiz
-                                } else {
-                                    lobbyViewModel.lobbyState = .errorGeneratingQuiz
-                                }
-                            }
+                            lobbyViewModel.generateQuiz(numberOfQuestions: lobbyViewModel.questionNumber)
                         }
                         .padding(10)
                         .frame(width: 210)
