@@ -74,6 +74,9 @@ struct LobbyView: View {
             .background(lobbyViewModel.darkTheme ? Colors.darkColor : Color.white)
             .preferredColorScheme(lobbyViewModel.colorScheme)
             .navigationBarHidden(true)
+            .onAppear{
+                self.lobbyViewModel.lobbyState = .generateQuiz
+            }
         }
         .accentColor( .black)
     }
