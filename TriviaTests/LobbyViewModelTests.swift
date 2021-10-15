@@ -5,11 +5,12 @@ import SwiftUI
 class LobbyViewModelTests: XCTestCase {
     
     let lobbyApi: LobbyApi = StubLobbyApi()
+    let storageService: StorageService = StorageService()
     var sut: LobbyViewModel!
     
     override func setUp() {
         UserDefaults.standard.removeObject(forKey: darkThemeKey)
-        self.sut = LobbyViewModel(triviaApi: lobbyApi)
+        self.sut = LobbyViewModel(triviaApi: lobbyApi, storageService: storageService)
     }
     
     func test_returns_corrent_initial_lobby_state() {

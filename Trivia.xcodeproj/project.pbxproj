@@ -18,6 +18,8 @@
 		3C83A9B426FCE43D00A7CDAB /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C83A9B326FCE43D00A7CDAB /* HttpClient.swift */; };
 		3C83A9B626FCE45F00A7CDAB /* LobbyApiImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C83A9B526FCE45F00A7CDAB /* LobbyApiImpl.swift */; };
 		3C83A9BD26FCE63F00A7CDAB /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 3C83A9BC26FCE63F00A7CDAB /* Swinject */; };
+		3C8496872719CCE00031C09B /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8496862719CCE00031C09B /* StorageService.swift */; };
+		3C8496892719D16C0031C09B /* StorageServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8496882719D16C0031C09B /* StorageServiceTests.swift */; };
 		3CA4DE0027076886008CE27C /* LobbyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA4DDFF27076886008CE27C /* LobbyView.swift */; };
 		3CF27A572710BE8500105080 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF27A562710BE8500105080 /* Colors.swift */; };
 		3CF5A64D26FF00BA003812FF /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF5A64C26FF00BA003812FF /* Result.swift */; };
@@ -75,6 +77,8 @@
 		3C83A9B026FCE3E600A7CDAB /* QuizResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizResponse.swift; sourceTree = "<group>"; };
 		3C83A9B326FCE43D00A7CDAB /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		3C83A9B526FCE45F00A7CDAB /* LobbyApiImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyApiImpl.swift; sourceTree = "<group>"; };
+		3C8496862719CCE00031C09B /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		3C8496882719D16C0031C09B /* StorageServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageServiceTests.swift; sourceTree = "<group>"; };
 		3CA4DDFF27076886008CE27C /* LobbyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyView.swift; sourceTree = "<group>"; };
 		3CF27A562710BE8500105080 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		3CF5A64C26FF00BA003812FF /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
@@ -193,6 +197,7 @@
 				3C83A99826FCE3A600A7CDAB /* Info.plist */,
 				3CFA1EBA2708D449003560A9 /* LobbyViewModelTests.swift */,
 				3CFA1EBC2708D986003560A9 /* QuizViewModelTests.swift */,
+				3C8496882719D16C0031C09B /* StorageServiceTests.swift */,
 			);
 			path = TriviaTests;
 			sourceTree = "<group>";
@@ -211,6 +216,7 @@
 			children = (
 				3C83A9B326FCE43D00A7CDAB /* HttpClient.swift */,
 				3CF5A64C26FF00BA003812FF /* Result.swift */,
+				3C8496862719CCE00031C09B /* StorageService.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -535,6 +541,7 @@
 				3CFAA6982710205700295EE4 /* QuizGameContainer.swift in Sources */,
 				3CFC80D72700324F00141AF8 /* QuizQuestionsUiMapper.swift in Sources */,
 				3C83A98526FCE3A400A7CDAB /* TriviaApp.swift in Sources */,
+				3C8496872719CCE00031C09B /* StorageService.swift in Sources */,
 				3CF27A572710BE8500105080 /* Colors.swift in Sources */,
 				3CF9CCA82708A9A700461E02 /* LobbyContainer.swift in Sources */,
 				3CFA1EBF2708DCFA003560A9 /* LobbyApi.swift in Sources */,
@@ -550,6 +557,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3CFA1EC52708E0FD003560A9 /* Fakes.swift in Sources */,
+				3C8496892719D16C0031C09B /* StorageServiceTests.swift in Sources */,
 				3CFA1EBB2708D449003560A9 /* LobbyViewModelTests.swift in Sources */,
 				3CFA1EBD2708D986003560A9 /* QuizViewModelTests.swift in Sources */,
 				3CFA1EC22708DDFC003560A9 /* StubLobbyApi.swift in Sources */,

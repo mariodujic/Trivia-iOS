@@ -8,22 +8,24 @@ class LobbyViewModel: ObservableObject {
     
     @Published var lobbyState: LobbyState = .generateQuiz
     @Published var questionNumber: Int = 10
-    @Published var triviaQuestions: [TriviaQuestion]? = nil
+    @Published private (set) var triviaQuestions: [TriviaQuestion]? = nil
     
-    var cancellable: AnyCancellable? = nil
-    var triviaApi: LobbyApi
+    private var cancellable: AnyCancellable? = nil
+    private var triviaApi: LobbyApi
+    private var storageService: StorageService
     
-    @Published private(set) var darkTheme: Bool = UserDefaults.standard.bool(forKey: darkThemeKey) {
-        didSet { UserDefaults.standard.set(self.darkTheme, forKey: darkThemeKey) }
+    @Published private(set) var darkTheme: Bool! {
+        didSet { storageService.setBool(key: darkThemeKey, value: darkTheme) }
     }
     
-    init(triviaApi: LobbyApi){
+    init(triviaApi: LobbyApi, storageService: StorageService){
         self.triviaApi = triviaApi
-        self.registerDefaultDarkTheme()
+        self.storageService = storageService
+        self.getDarkTheme()
     }
     
-    private func registerDefaultDarkTheme() {
-        UserDefaults.standard.register(defaults: [darkThemeKey : false])
+    private func getDarkTheme() {
+        self.darkTheme = self.storageService.getBool(key: darkThemeKey)
     }
     
     func toggleDarkTheme() {
