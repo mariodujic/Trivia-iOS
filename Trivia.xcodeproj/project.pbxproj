@@ -21,6 +21,7 @@
 		3C8496872719CCE00031C09B /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8496862719CCE00031C09B /* StorageService.swift */; };
 		3C8496892719D16C0031C09B /* StorageServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8496882719D16C0031C09B /* StorageServiceTests.swift */; };
 		3CA4DE0027076886008CE27C /* LobbyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA4DDFF27076886008CE27C /* LobbyView.swift */; };
+		3CF225BD271C01350048CBCE /* TriviaQuestionUi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF225BC271C01350048CBCE /* TriviaQuestionUi.swift */; };
 		3CF27A572710BE8500105080 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF27A562710BE8500105080 /* Colors.swift */; };
 		3CF5A64D26FF00BA003812FF /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF5A64C26FF00BA003812FF /* Result.swift */; };
 		3CF5A65026FF07EE003812FF /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 3CF5A64F26FF07EE003812FF /* Lottie */; };
@@ -37,7 +38,7 @@
 		3CFAA6982710205700295EE4 /* QuizGameContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFAA6972710205700295EE4 /* QuizGameContainer.swift */; };
 		3CFAA69A2710217200295EE4 /* QuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFAA6992710217200295EE4 /* QuizViewModel.swift */; };
 		3CFC590A27081FC800432D4E /* lottie-quiz-logo.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CFC590927081FC800432D4E /* lottie-quiz-logo.json */; };
-		3CFC80D72700324F00141AF8 /* QuizQuestionsUiMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFC80D62700324F00141AF8 /* QuizQuestionsUiMapper.swift */; };
+		3CFC80D72700324F00141AF8 /* QuizQuestionsNetworkToUiMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFC80D62700324F00141AF8 /* QuizQuestionsNetworkToUiMapper.swift */; };
 		3CFC80DC270039E600141AF8 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFC80DB270039E600141AF8 /* StringUtils.swift */; };
 		3CFC80DE27003A0F00141AF8 /* DataUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFC80DD27003A0F00141AF8 /* DataUtils.swift */; };
 		3CFE76CF270F444300A4EB95 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFE76CE270F444300A4EB95 /* ResultView.swift */; };
@@ -80,6 +81,7 @@
 		3C8496862719CCE00031C09B /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		3C8496882719D16C0031C09B /* StorageServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageServiceTests.swift; sourceTree = "<group>"; };
 		3CA4DDFF27076886008CE27C /* LobbyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyView.swift; sourceTree = "<group>"; };
+		3CF225BC271C01350048CBCE /* TriviaQuestionUi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaQuestionUi.swift; sourceTree = "<group>"; };
 		3CF27A562710BE8500105080 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		3CF5A64C26FF00BA003812FF /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		3CF5A65126FF08D4003812FF /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
@@ -95,7 +97,7 @@
 		3CFAA6972710205700295EE4 /* QuizGameContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizGameContainer.swift; sourceTree = "<group>"; };
 		3CFAA6992710217200295EE4 /* QuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewModel.swift; sourceTree = "<group>"; };
 		3CFC590927081FC800432D4E /* lottie-quiz-logo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lottie-quiz-logo.json"; sourceTree = "<group>"; };
-		3CFC80D62700324F00141AF8 /* QuizQuestionsUiMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizQuestionsUiMapper.swift; sourceTree = "<group>"; };
+		3CFC80D62700324F00141AF8 /* QuizQuestionsNetworkToUiMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizQuestionsNetworkToUiMapper.swift; sourceTree = "<group>"; };
 		3CFC80DB270039E600141AF8 /* StringUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
 		3CFC80DD27003A0F00141AF8 /* DataUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataUtils.swift; sourceTree = "<group>"; };
 		3CFE76CE270F444300A4EB95 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 		3C83A9B726FCE48E00A7CDAB /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				3CF225BB271C01180048CBCE /* Model */,
 				3CFC80E027003A9600141AF8 /* UI */,
 				3CFC80DF27003A8900141AF8 /* Mapper */,
 			);
@@ -247,6 +250,14 @@
 				3CF9CCA22708A8CE00461E02 /* UI */,
 			);
 			path = Presentation;
+			sourceTree = "<group>";
+		};
+		3CF225BB271C01180048CBCE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3CF225BC271C01350048CBCE /* TriviaQuestionUi.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		3CF5A2F427004CBF001A19FF /* Lottie */ = {
@@ -349,7 +360,7 @@
 		3CFC80DF27003A8900141AF8 /* Mapper */ = {
 			isa = PBXGroup;
 			children = (
-				3CFC80D62700324F00141AF8 /* QuizQuestionsUiMapper.swift */,
+				3CFC80D62700324F00141AF8 /* QuizQuestionsNetworkToUiMapper.swift */,
 			);
 			path = Mapper;
 			sourceTree = "<group>";
@@ -534,12 +545,13 @@
 				3CF9CCA12708A8B100461E02 /* LobbyViewModel.swift in Sources */,
 				3CFC80DE27003A0F00141AF8 /* DataUtils.swift in Sources */,
 				3C83A9B626FCE45F00A7CDAB /* LobbyApiImpl.swift in Sources */,
+				3CF225BD271C01350048CBCE /* TriviaQuestionUi.swift in Sources */,
 				3CFAA69A2710217200295EE4 /* QuizViewModel.swift in Sources */,
 				3CF5A65226FF08D4003812FF /* LottieView.swift in Sources */,
 				3C83A9B126FCE3E600A7CDAB /* QuizResponse.swift in Sources */,
 				3C83A9B426FCE43D00A7CDAB /* HttpClient.swift in Sources */,
 				3CFAA6982710205700295EE4 /* QuizGameContainer.swift in Sources */,
-				3CFC80D72700324F00141AF8 /* QuizQuestionsUiMapper.swift in Sources */,
+				3CFC80D72700324F00141AF8 /* QuizQuestionsNetworkToUiMapper.swift in Sources */,
 				3C83A98526FCE3A400A7CDAB /* TriviaApp.swift in Sources */,
 				3C8496872719CCE00031C09B /* StorageService.swift in Sources */,
 				3CF27A572710BE8500105080 /* Colors.swift in Sources */,

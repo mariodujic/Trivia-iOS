@@ -3,7 +3,7 @@ import XCTest
 
 class QuizViewModelTests: XCTestCase {
     
-    let quizQuestionsUiMapper = QuizQuestionsUiMapper()
+    let quizQuestionsUiMapper = QuizQuestionsNetworkToUiMapper()
     var sut: QuizViewModel!
     
     override func setUp() {

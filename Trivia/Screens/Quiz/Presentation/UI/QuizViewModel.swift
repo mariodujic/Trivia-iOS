@@ -2,13 +2,13 @@ import Foundation
 
 class QuizViewModel: ObservableObject {
     
-    @Published private(set) var triviaQuestions: [TriviaQuestion]? = nil
+    @Published private(set) var triviaQuestions: [TriviaQuestionUi]? = nil
     @Published private(set) var currentQuestionIndex: Int = 0
     @Published private(set) var selectedAnswers: [String?] = []
     
-    let quizQuestionsUiMapper: QuizQuestionsUiMapper
+    let quizQuestionsUiMapper: QuizQuestionsNetworkToUiMapper
     
-    init(quizQuestionsUiMapper: QuizQuestionsUiMapper, triviaQuestions: [TriviaQuestion]) {
+    init(quizQuestionsUiMapper: QuizQuestionsNetworkToUiMapper, triviaQuestions: [TriviaQuestion]) {
         self.quizQuestionsUiMapper = quizQuestionsUiMapper
         self.triviaQuestions = self.quizQuestionsUiMapper.map(questions: triviaQuestions)
     }
@@ -18,15 +18,7 @@ class QuizViewModel: ObservableObject {
     }
     
     var answers: [String] {
-        var incorrectAnswers: [String]? =
-        triviaQuestions?[currentQuestionIndex].incorrectAnswers
-        
-        if self.correctAnswer != nil && incorrectAnswers != nil {
-            incorrectAnswers?.append(self.correctAnswer!)
-            return incorrectAnswers!
-        } else {
-            return []
-        }
+        (triviaQuestions?[currentQuestionIndex].allAnswers)!
     }
     
     var correctAnswer: String? {
