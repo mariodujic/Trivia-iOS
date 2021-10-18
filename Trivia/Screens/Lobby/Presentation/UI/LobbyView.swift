@@ -62,6 +62,7 @@ struct LobbyView: View {
                         Image(uiImage: UIImage(named: lobbyViewModel.darkTheme ? "turned-on" : "turned-off")!)
                             .resizable()
                             .frame(width: 30, height: 30)
+                            .accessibilityIdentifier(Strings.lobbyToogleDarkThemeAccessibilityButton)
                     }
                 }
                 .frame(
