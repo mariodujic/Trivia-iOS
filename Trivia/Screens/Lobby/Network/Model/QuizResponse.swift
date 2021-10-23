@@ -1,6 +1,6 @@
 import Foundation
 
-struct QuizResponse: Codable {
+struct QuizResponse: Decodable {
     let responseCode: Int
     let results: [TriviaQuestion]
 
@@ -10,20 +10,23 @@ struct QuizResponse: Codable {
     }
 }
 
-struct TriviaQuestion: Codable, Equatable {
+struct TriviaQuestion: Decodable, Equatable {
     let category: String
     let difficulty: Difficulty
-    let question, correctAnswer: String
+    let question: String
+    let correctAnswer: String
     let incorrectAnswers: [String]
 
     enum CodingKeys: String, CodingKey {
-        case category, difficulty, question
+        case category
+        case difficulty
+        case question
         case correctAnswer = "correct_answer"
         case incorrectAnswers = "incorrect_answers"
     }
 }
 
-enum Difficulty: String, Codable {
+enum Difficulty: String, Decodable {
     case easy = "easy"
     case hard = "hard"
     case medium = "medium"
