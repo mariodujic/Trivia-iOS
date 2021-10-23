@@ -2,13 +2,13 @@ import Foundation
 import Combine
 import SwiftUI
 
-let darkThemeKey: String = "darkThemeKey"
-
-class LobbyViewModel: ObservableObject {
+final class LobbyViewModel: ObservableObject {
     
     @Published var lobbyState: LobbyState = .generateQuiz
     @Published var questionNumber: Int = 10
     @Published private (set) var triviaQuestions: [TriviaQuestion]? = nil
+    
+    let darkThemeKey: String = "darkThemeKey"
     
     private var cancellable: AnyCancellable? = nil
     private var triviaApi: LobbyAPIProviding
@@ -29,7 +29,7 @@ class LobbyViewModel: ObservableObject {
     }
     
     func toggleDarkTheme() {
-        self.darkTheme = !self.darkTheme
+        self.darkTheme.toggle()
     }
     
     var colorScheme: ColorScheme {

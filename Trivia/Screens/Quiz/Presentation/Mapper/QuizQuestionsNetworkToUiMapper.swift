@@ -1,4 +1,4 @@
-class QuizQuestionsNetworkToUiMapper {
+final class QuizQuestionsNetworkToUiMapper {
     
     func map(questions: [TriviaQuestion]) -> [TriviaQuestionUi] {
         questions.map {question in

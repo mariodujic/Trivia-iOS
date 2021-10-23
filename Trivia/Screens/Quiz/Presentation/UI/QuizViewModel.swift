@@ -1,6 +1,6 @@
 import Foundation
 
-class QuizViewModel: ObservableObject {
+final class QuizViewModel: ObservableObject {
     
     @Published private(set) var triviaQuestions: [TriviaQuestionUi]? = nil
     @Published private(set) var currentQuestionIndex: Int = 0

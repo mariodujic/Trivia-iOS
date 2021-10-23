@@ -1,6 +1,6 @@
 import Foundation
 
-class StorageService {
+final class StorageService {
     
     func setBool(key: String, value: Bool) {
         UserDefaults.standard.set(value, forKey: key)
