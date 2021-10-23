@@ -11,14 +11,14 @@ class LobbyViewModel: ObservableObject {
     @Published private (set) var triviaQuestions: [TriviaQuestion]? = nil
     
     private var cancellable: AnyCancellable? = nil
-    private var triviaApi: LobbyApi
+    private var triviaApi: LobbyAPIProviding
     private var storageService: StorageService
     
     @Published private(set) var darkTheme: Bool! {
         didSet { storageService.setBool(key: darkThemeKey, value: darkTheme) }
     }
     
-    init(triviaApi: LobbyApi, storageService: StorageService){
+    init(triviaApi: LobbyAPIProviding, storageService: StorageService){
         self.triviaApi = triviaApi
         self.storageService = storageService
         self.getDarkTheme()
@@ -41,7 +41,7 @@ class LobbyViewModel: ObservableObject {
     }
     
     func generateQuiz(numberOfQuestions: Int) {
-        self.cancellable = self.triviaApi.get(amount: numberOfQuestions)
+        self.cancellable = self.triviaApi.fetchQuiz(amount: numberOfQuestions)
             .sink( receiveCompletion: { [weak self] completion in
                 switch completion {
                 case .failure:

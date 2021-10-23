@@ -4,7 +4,7 @@ import SwiftUI
 
 class LobbyViewModelTests: XCTestCase {
     
-    let lobbyApi: LobbyApi = StubLobbyApi()
+    let lobbyApi: LobbyAPIProviding = StubLobbyApi()
     let storageService: StorageService = StorageService()
     var sut: LobbyViewModel!
     

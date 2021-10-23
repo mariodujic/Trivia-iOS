@@ -1,11 +1,11 @@
 import Combine
 import Foundation
 
-struct LobbyApiImpl: LobbyApi {
+struct LobbyAPI: LobbyAPIProviding {
     
     let client: HttpClient
     
-    func get(amount: Int) -> AnyPublisher<QuizResponse, Error> {
+    func fetchQuiz(amount: Int) -> AnyPublisher<QuizResponse, Error> {
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = "opentdb.com"
