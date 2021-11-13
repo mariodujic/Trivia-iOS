@@ -9,8 +9,8 @@ class LobbyViewModelTests: XCTestCase {
     var sut: LobbyViewModel!
     
     override func setUp() {
-        UserDefaults.standard.removeObject(forKey: darkThemeKey)
         self.sut = LobbyViewModel(triviaApi: lobbyApi, storageService: storageService)
+        UserDefaults.standard.removeObject(forKey: sut.darkThemeKey)
     }
     
     func test_returns_corrent_initial_lobby_state() {
@@ -51,8 +51,8 @@ class LobbyViewModelTests: XCTestCase {
     }
     
     func test_returns_colorScheme_dark_when_toggleDarkTheme() {
+        let expectedValue: ColorScheme = sut.darkTheme ? .light : .dark
         sut.toggleDarkTheme()
-        let expectedValue: ColorScheme = .dark
         let actualValue = sut.colorScheme
         XCTAssertEqual(expectedValue, actualValue)
     }

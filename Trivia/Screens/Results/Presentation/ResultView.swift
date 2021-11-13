@@ -1,21 +1,21 @@
 import Foundation
 import SwiftUI
+import Swinject
 
 struct ResultView: View {
     
-    private var quizResult: String
+    @StateObject private var resultViewModel: ResultViewModel
     
     @Environment(\.colorScheme) private var colorScheme: ColorScheme
     
-    init(quizResult: String){
-        self.quizResult = quizResult
+    init(quizResult: QuizResult){
+        _resultViewModel = StateObject(wrappedValue: Container.resultContainer(quizResult:quizResult).resolve(ResultViewModel.self)!)
     }
     
     var body: some View {
         VStack(spacing: 15){
             Text(Strings.resultCorrectAnswers)
-            Text(self.quizResult)
-                .font(.system(size: 26, weight: .bold))
+            Text(self.resultViewModel.quizResult.result).font(.system(size: 26, weight: .bold))
         }
         .frame(
             minWidth: 0,

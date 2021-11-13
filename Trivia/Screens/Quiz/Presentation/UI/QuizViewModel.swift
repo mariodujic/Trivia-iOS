@@ -60,13 +60,18 @@ final class QuizViewModel: ObservableObject {
         self.currentQuestionIndex += 1
     }
     
-    func getResults() -> String {
+    func getResult()->QuizResult {
         var correctAnswerCount = 0
         for (index, answer) in selectedAnswers.enumerated() {
             if answer == self.triviaQuestions![index].correctAnswer {
                 correctAnswerCount += 1
             }
         }
-        return "\(correctAnswerCount)/\(triviaQuestions!.count)"
+        return QuizResult(
+            id: UUID().uuidString,
+            questions: triviaQuestions!,
+            answers: selectedAnswers,
+            result: "\(correctAnswerCount)/\(triviaQuestions!.count)"
+        )
     }
 }

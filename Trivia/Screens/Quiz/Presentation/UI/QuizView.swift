@@ -81,7 +81,7 @@ struct QuizView: View {
                 } else {
                     NavigationLink(
                         Strings.quizFinishQuiz,
-                        destination: ResultView(quizResult: quizViewModel.getResults())
+                        destination: ResultView(quizResult: quizViewModel.getResult())
                     )
                         .padding(.init(top: 12, leading: 15, bottom: 12, trailing: 15))
                         .foregroundColor(.white)
